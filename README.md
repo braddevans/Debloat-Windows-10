@@ -40,6 +40,15 @@ Unblock PowerShell scripts and modules within this directory:
 
     PS> ls -Recurse *.ps*1 | Unblock-File
 
+Execute Everything in the scripts directory (if you realy need to):
+
+    cd .\scripts\
+```bash
+Get-ChildItem (Get-Location) | ForEach-Object {
+& $_.FullName
+}
+```
+
 ## Usage
 
 1. Install all available updates for your system.
